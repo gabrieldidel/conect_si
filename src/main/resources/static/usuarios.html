@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Área Interativa - Curso de BSI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <h1>Área Interativa</h1>
+    <nav>
+        <a href="home-logged.html">Home</a>
+        <a href="usuarios.html">Área Interativa</a>
+        <a href="perfil.html">Meu Perfil</a>
+        <a href="#" id="logoutBtn" style="display:none">Sair</a>
+    </nav>
+</header>
+
+<main>
+    <section id="novaPostagem" style="display:none">
+        <h2>Criar Postagem</h2>
+        <form id="postForm">
+            <input type="text" id="titulo" placeholder="Título" required>
+            <textarea id="conteudo" placeholder="Conteúdo" required></textarea>
+            <button type="submit">Publicar</button>
+        </form>
+        <p id="mensagemPost" style="color:green;"></p>
+    </section>
+
+    <section id="postagens">
+        <h2>Últimas Postagens</h2>
+        <div id="listaPostagens"></div>
+    </section>
+</main>
+
+
+<footer>
+    <p>&copy; 2025 Curso de BSI</p>
+</footer>
+
+<script src="js/usuarios.js"></script>
+</body>
+</html>
