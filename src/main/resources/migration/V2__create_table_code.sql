@@ -1,0 +1,6 @@
+CREATE TABLE codes (
+    id BIGSERIAL PRIMARY KEY,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT now(),
+    user_id BIGINT NOT NULL REFERENCES usuario(id) ON DELETE CASCADE
+);
