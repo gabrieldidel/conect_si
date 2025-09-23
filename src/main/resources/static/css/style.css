@@ -1,41 +1,195 @@
-body {
-    font-family: Arial, sans-serif;
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#000706, #00272d);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    color: #ffffff;
+    overflow: hidden;
 }
 
-header, footer {
-    background-color: #004080;
-    color: white;
-    padding: 10px;
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+    height: 150px;
+}
+
+#containerLogo{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+#logo{
+    background-color: rgb(241, 241, 241);
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+#btnNavegacao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 15%;
+    margin-top: 20px;
+}
+
+.linha{
+    margin: 6px;
+    width: 70px;
+    height: 6px;
+    background-color: #0c7e7e;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navBar{
+    position: absolute;
+    top: 150px;
+    right: 0;
+    background-color: #00272d;
+    width: 50vw;
+    height: 100%; 
+}
+
+.navBar ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    font-size: 50px;
     text-align: center;
 }
 
-nav a {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 81.5vh;
 }
 
-main {
-    padding: 20px;
+#containerTitulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    margin-top: 100px;
 }
 
-form input {
-    display: block;
-    margin: 10px 0;
-    padding: 8px;
-    width: 200px;
+#containerTitulo h2{
+    font-size: 90px;
+    text-align: center;
 }
 
-form button {
-    padding: 8px 16px;
-    background-color: #004080;
-    color: white;
+#containerTitulo p{
+    margin-top: 40px;
+    font-size: 35px;
+    text-align: center;
+}
+
+#login-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 170px;
+    width: 80vw;
+    height: 40vh;
+    background-color: #000706b0;
+    border-radius: 20px;
+}
+
+#login-section h2{
+    text-align: center;
+    font-size: 60px;
+}
+
+#loginForm{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+#loginForm input, button{
+    width: 70vw;
+    height: 80px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    font-size: 35px;
+    border: solid 4px #0c7e7e;
+    transition: 0.5s;
+    background-color: transparent;
+    color: #0c7e7e;
+}
+
+#loginForm input, #loginForm input::placeholder{
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#loginForm button:hover{
+    background-color: #0c7e7e;
+    color: #ffffff;
+}
+
+#cadastro{
+    background-color: #0c7e7e;
     border: none;
-    cursor: pointer;
 }
 
-form button:hover {
-    background-color: #0066cc;
+#cadastro a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+footer{
+    background-color: #134647;
+    height: 10.7vh;
+    text-align: center;
+    padding: 20px 20px;
+}
+
+footer p{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.redeSocial{
+    margin-top: 40px;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#instagram, #linkedin{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+    border-radius: 20%;
+    border: solid 2px #134647;
+    background-color: transparent;
 }
