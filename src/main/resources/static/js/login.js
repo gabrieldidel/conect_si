@@ -1,6 +1,6 @@
 const loginForm = document.getElementById('loginForm');
 const loginMessage = document.getElementById('loginMessage');
-const API_URL = 'http://localhost:8080/usuarios';
+const API_URL = 'https://conectsi-production.up.railway.app/usuarios';
 
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
