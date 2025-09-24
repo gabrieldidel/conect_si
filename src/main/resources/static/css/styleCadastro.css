@@ -1,0 +1,88 @@
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 82.3vh;
+}
+
+#cadastro-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 40vh;
+    background-color: #000706b0;
+    border-radius: 20px;
+}
+
+#cadastro-section h2{
+    text-align: center;
+    font-size: 60px;
+}
+
+#cadastroForm{
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+#cadastroForm input, #cadastroForm button{
+    width: 70vw;
+    height: 80px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    font-size: 35px;
+    border: solid 4px #0c7e7e;
+    transition: 0.5s;
+}
+
+#cadastroForm button{
+    background-color: #0c7e7e;
+    color: #ffffff;
+}
+
+#cadastroForm input, #cadastroForm input::placeholder{
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#cadastroForm button:hover{
+    background-color: #ffffff;
+    color: #0c7e7e;
+}
+
+footer{
+    background-color: #134647;
+    height: 10vh;
+    text-align: center;
+    padding: 20px 20px;
+}
+
+footer p{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.redeSocial{
+    margin-top: 40px;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#instagram, #linkedin{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+    border-radius: 20%;
+    border: solid 2px #134647;
+    background-color: transparent;
+}
