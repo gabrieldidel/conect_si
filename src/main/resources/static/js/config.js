@@ -1,0 +1,12 @@
+// Arquivo: js/config.js
+
+// Define se está em ambiente local ou produção
+const ENVIRONMENT = 'local'; // altere para 'prod' quando for subir
+
+const API_BASE_URL =
+  ENVIRONMENT === 'local'
+    ? 'http://localhost:8080'
+    : 'https://conectsi-production.up.railway.app';
+
+// Exporta para outros scripts
+export { API_BASE_URL };

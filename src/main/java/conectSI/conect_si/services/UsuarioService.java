@@ -18,16 +18,18 @@ public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
     private final SecurityConfig securityConfig;
     private final PasswordEncoder passwordEncoder;
+    private final JwtService jwtService;
 
     public Usuario salvarUsuario(Usuario usuario) {
         usuario.setSenha(securityConfig.passwordEncoder().encode(usuario.getSenha()));
         return usuarioRepository.save(usuario);
     }
 
-    public Boolean buscarUsuario (LoginDTO loginDTO) {
+    public String buscarUsuario(LoginDTO loginDTO) {
         return usuarioRepository.findByEmail(loginDTO.getEmail())
-                .map(usuario -> passwordEncoder.matches(loginDTO.getSenha(), usuario.getSenha()))
-                .orElse(false);
+                .filter(usuario -> passwordEncoder.matches(loginDTO.getSenha(), usuario.getSenha()))
+                .map(usuario -> jwtService.generateToken(usuario.getEmail(), usuario.getNome()))
+                .orElseThrow(() -> new RuntimeException("Usuário ou senha inválidos"));
     }
 
     public List<Usuario> listarUsuarios() {
