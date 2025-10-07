@@ -5,7 +5,7 @@ const novaPostagemSection = document.getElementById('novaPostagem');
 const mensagemPost = document.getElementById('mensagemPost');
 const logoutBtn = document.getElementById('logoutBtn');
 
-const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
+const usuario = JSON.parse(localStorage.getItem('jwtToken'));
 
 // Se estiver logado, mostra formulário e logout
 if (usuario) {
@@ -15,7 +15,7 @@ if (usuario) {
 
 // Logout
 logoutBtn.addEventListener('click', () => {
-    localStorage.removeItem('usuarioLogado');
+    localStorage.removeItem('jwtToken');
     window.location.href = 'usuarios.html';
 });
 

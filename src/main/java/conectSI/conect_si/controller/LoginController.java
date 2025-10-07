@@ -16,7 +16,7 @@ public class LoginController {
     private final LoginService loginService;
 
     @PostMapping
-    public Boolean login(
+    public String login(
             @RequestBody LoginDTO loginDTO
     ){
         return loginService.login(loginDTO);

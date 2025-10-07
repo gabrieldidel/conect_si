@@ -12,7 +12,7 @@ public class LoginService {
     private final UsuarioRepository usuarioRepository;
     private final UsuarioService usuarioService;
 
-    public Boolean login(LoginDTO loginDTO){
+    public String login(LoginDTO loginDTO){
         return usuarioService.buscarUsuario(loginDTO);
     }
 
