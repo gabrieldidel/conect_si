@@ -1,7 +1,5 @@
-// Arquivo: js/config.js
 
-// Define se está em ambiente local ou produção
-const ENVIRONMENT = 'local'; // altere para 'prod' quando for subir
+const ENVIRONMENT = 'dev';
 
 const API_BASE_URL =
   ENVIRONMENT === 'local'
