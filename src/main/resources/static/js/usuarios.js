@@ -1,4 +1,4 @@
-const API_URL_POSTAGENS = 'http://localhost:8080/postagens';
+const API_URL_POSTAGENS = 'https://conectsi-production.up.railway.app/postagens';
 const listaPostagensDiv = document.getElementById('listaPostagens');
 const postForm = document.getElementById('postForm');
 const novaPostagemSection = document.getElementById('novaPostagem');
