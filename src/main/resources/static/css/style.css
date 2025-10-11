@@ -277,11 +277,6 @@ footer p {
         padding-bottom: 50px;
     }
 
-    .navBar ul li a:hover{
-	    transform: scale(1.2);
-		border-radius: 0.5;
-	}
-    
     #containerTitulo {
         width: 40vw;
         height: auto;
@@ -313,22 +308,27 @@ footer p {
         font-size: 18px;
         cursor: pointer;
     }
-
-    #loginButtom{
+    
+	#loginButtom{
 		height: 55px;
         font-size: 18px;
         cursor: pointer;
 	}
 
-    #loginButtom:hover{
+	#loginButtom:hover{
 		background-color: #0c7e7e;
   		transform: scale(1.05);
 	}
-    
+
     #cadastro {
         line-height: 55px;
     }
     
+	#cadastro:hover{
+		background-color: #0c7e7e;
+  		transform: scale(1.05);
+	}
+
     footer {
         height: 80px;
         display: flex;
