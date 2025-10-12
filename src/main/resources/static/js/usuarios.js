@@ -1,11 +1,11 @@
-const API_URL_POSTAGENS = 'http://localhost:8080/postagens';
+const API_URL_POSTAGENS = 'https://conectsi-production.up.railway.app/postagens';
 const listaPostagensDiv = document.getElementById('listaPostagens');
 const postForm = document.getElementById('postForm');
 const novaPostagemSection = document.getElementById('novaPostagem');
 const mensagemPost = document.getElementById('mensagemPost');
 const logoutBtn = document.getElementById('logoutBtn');
 
-const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
+const usuario = JSON.parse(localStorage.getItem('jwtToken'));
 
 // Se estiver logado, mostra formulário e logout
 if (usuario) {
@@ -15,7 +15,7 @@ if (usuario) {
 
 // Logout
 logoutBtn.addEventListener('click', () => {
-    localStorage.removeItem('usuarioLogado');
+    localStorage.removeItem('jwtToken');
     window.location.href = 'usuarios.html';
 });
 

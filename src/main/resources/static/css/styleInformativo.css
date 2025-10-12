@@ -363,7 +363,13 @@ footer p {
         font-size: 18px;
         padding: 0;
         border-bottom: none;
+        transition: 0.5s;
     }
+
+	.navBar ul li a:hover{
+		transform: scale(1.2);
+		border-radius: 0.5;
+	}
 
     /* MAIN GERAL */
     .tituloEvideo {
@@ -395,6 +401,8 @@ footer p {
         width: 100%; 
     }
 
+
+
     .quadros span {
         margin-left: 40px;
         width: 25vw; 
@@ -403,6 +411,11 @@ footer p {
        
     }
     
+	.quadros span:hover{
+		background-color: #00272d;
+  		transform: scale(1.1);
+	}
+
     .quadros span h4 {
         font-size: 27px;
     }
