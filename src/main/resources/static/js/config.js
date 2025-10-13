@@ -1,5 +1,5 @@
 
-const ENVIRONMENT = 'dev';
+const ENVIRONMENT = 'local';
 
 const API_BASE_URL =
   ENVIRONMENT === 'local'

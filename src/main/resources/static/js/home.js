@@ -1,4 +1,4 @@
-const usuario = JSON.parse(localStorage.getItem('jwtToken'));
+const usuario = JSON.parse(sessionStorage.getItem('jwtToken'));
 const nomeUsuarioSpan = document.getElementById('nomeUsuario');
 const logoutBtn = document.getElementById('logoutBtn');
 
