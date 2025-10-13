@@ -28,7 +28,7 @@ public class UsuarioService {
     public String buscarUsuario(LoginDTO loginDTO) {
         return usuarioRepository.findByEmail(loginDTO.getEmail())
                 .filter(usuario -> passwordEncoder.matches(loginDTO.getSenha(), usuario.getSenha()))
-                .map(usuario -> jwtService.generateToken(usuario.getEmail(), usuario.getNome()))
+                .map(usuario -> jwtService.generateToken(usuario.getId(), usuario.getEmail(), usuario.getNome()))
                 .orElseThrow(() -> new RuntimeException("Usuário ou senha inválidos"));
     }
 
