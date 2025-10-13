@@ -104,6 +104,7 @@ footer p {
         padding: 40px;
     }
 
+
     #cadastro-section h2 {
         font-size: 35px;
     }
@@ -117,7 +118,11 @@ footer p {
         font-size: 18px;
         margin-bottom: 30px;
     }
-    
+
+	#cadastroForm button:hover{
+		transform: scale(1.05);
+	};
+
     footer {
         height: 100px;
         display: flex;
