@@ -1,6 +1,7 @@
 package conectSI.conect_si.controller;
 
 import conectSI.conect_si.model.Postagem;
+import conectSI.conect_si.model.dto.PostagemDTO;
 import conectSI.conect_si.services.PostagemService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -28,19 +29,19 @@ public class PostagemController {
     }
 
     @PostMapping
-    public Postagem criarPostagem(@RequestBody Postagem postagem) {
-        return postagemService.salvarPostagem(postagem);
+    public Postagem criarPostagem(
+            @RequestHeader String authorization,
+            @RequestBody PostagemDTO postagem
+    ) {
+        return postagemService.salvarPostagem(authorization, postagem);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Postagem> atualizarPostagem(@PathVariable Integer id, @RequestBody Postagem postagem) {
-        return postagemService.buscarPorId(id)
-                .map(p -> {
-                    p.setTitulo(postagem.getTitulo());
-                    p.setConteudo(postagem.getConteudo());
-                    return ResponseEntity.ok(postagemService.salvarPostagem(p));
-                })
-                .orElse(ResponseEntity.notFound().build());
+    public Postagem atualizarPostagem(
+            @RequestHeader String authorization,
+            @PathVariable Integer id,
+            @RequestBody PostagemDTO postagem) {
+        return postagemService.salvarPostagem(authorization, postagem);
     }
 
     @DeleteMapping("/{id}")
