@@ -1,0 +1,157 @@
+/* =====================
+   ÁREA DE POSTAGENS
+===================== */
+main {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 20px;
+  z-index: 2;
+  position: relative;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+/* Título principal */
+main h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+/* =====================
+   FORMULÁRIO DE POSTAGEM
+===================== */
+#novaPostagem {
+  margin-bottom: 40px;
+  padding: 25px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f6f9fc, #eef3f7);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+#novaPostagem form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#novaPostagem label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+#novaPostagem input[type="text"],
+#novaPostagem textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  resize: none;
+}
+
+#novaPostagem input:focus,
+#novaPostagem textarea:focus {
+  border-color: #0077cc;
+  box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.2);
+  outline: none;
+}
+
+/* Botão de publicar */
+#novaPostagem button {
+  align-self: flex-end;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#novaPostagem button:hover {
+  background-color: #005fa3;
+  transform: scale(1.03);
+}
+
+/* Mensagem de sucesso/erro */
+#mensagemPost {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* =====================
+   LISTA DE POSTAGENS
+===================== */
+#listaPostagens {
+  margin-top: 30px;
+}
+
+.postagem {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  transition: all 0.2s ease;
+}
+
+.postagem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.postagem h3 {
+  color: #222;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.postagem p {
+  color: #444;
+  line-height: 1.5;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.postagem small {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* =====================
+   BOTÃO DE LOGOUT
+===================== */
+
+#containerPostagens{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =====================
+   RESPONSIVIDADE
+===================== */
+@media (max-width: 600px) {
+  main {
+    margin: 40px 10px;
+    padding: 15px;
+  }
+
+  #novaPostagem button {
+    width: 100%;
+  }
+
+  .postagem {
+    padding: 15px;
+  }
+}

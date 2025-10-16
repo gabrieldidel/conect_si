@@ -5,10 +5,11 @@ const novaPostagemSection = document.getElementById('novaPostagem');
 const mensagemPost = document.getElementById('mensagemPost');
 const logoutBtn = document.getElementById('logoutBtn');
 
-const usuario = JSON.parse(localStorage.getItem('jwtToken'));
+// Recupera o token JWT salvo no localStorage
+const token = sessionStorage.getItem('jwtToken');
 
-// Se estiver logado, mostra formulário e logout
-if (usuario) {
+// Se estiver logado, mostra formulário e botão de logout
+if (token) {
     novaPostagemSection.style.display = 'block';
     logoutBtn.style.display = 'inline';
 }
@@ -19,7 +20,7 @@ logoutBtn.addEventListener('click', () => {
     window.location.href = 'usuarios.html';
 });
 
-// Mostrar postagens
+// Exibe as postagens
 function mostrarPostagens(postagens) {
     listaPostagensDiv.innerHTML = '';
     postagens.sort((a, b) => new Date(b.dataCriacao) - new Date(a.dataCriacao));
@@ -30,7 +31,7 @@ function mostrarPostagens(postagens) {
         div.innerHTML = `
             <h3>${p.titulo}</h3>
             <p>${p.conteudo}</p>
-            <small>Por ${p.usuario.nome} em ${new Date(p.dataCriacao).toLocaleString()}</small>
+            <small>Por ${p.usuario?.nome || 'Anônimo'} em ${new Date(p.dataCriacao).toLocaleString()}</small>
         `;
         listaPostagensDiv.appendChild(div);
     });
@@ -45,7 +46,7 @@ function carregarPostagens() {
 }
 
 // Criar nova postagem (somente se logado)
-if (usuario) {
+if (token) {
     postForm.addEventListener('submit', e => {
         e.preventDefault();
         const titulo = document.getElementById('titulo').value;
@@ -53,11 +54,14 @@ if (usuario) {
 
         fetch(API_URL_POSTAGENS, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
             body: JSON.stringify({
                 titulo,
                 conteudo,
-                usuario: { id: usuario.id }
+                usuario: 7 // ID do usuário pode vir do backend, ou você pode decodificar o token pra pegar
             })
         })
             .then(res => {
