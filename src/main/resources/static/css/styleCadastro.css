@@ -57,8 +57,7 @@ main {
 }
 
 #cadastroForm button:hover {
-    background-color: #ffffff;
-    color: #0c7e7e;
+    transform: scale(1.05);
 }
 
 footer {
@@ -118,10 +117,6 @@ footer p {
         font-size: 18px;
         margin-bottom: 30px;
     }
-
-	#cadastroForm button:hover{
-		transform: scale(1.05);
-	};
 
     footer {
         height: 100px;
