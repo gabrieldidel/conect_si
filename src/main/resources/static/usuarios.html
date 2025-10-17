@@ -41,8 +41,30 @@
 
 <canvas id="particulasCanva"></canvas>
 
-<main>
+<main id="containerPostagens">
+    <section id="novaPostagem" style="display: none;">
+        <h2>Criar nova postagem</h2>
+        <form id="postForm">
+            <div>
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required />
+            </div>
 
+            <div>
+                <label for="conteudo">Conteúdo:</label>
+                <textarea id="conteudo" name="conteudo" rows="5" required></textarea>
+            </div>
+
+            <button type="submit">Publicar</button>
+        </form>
+        <p id="mensagemPost"></p>
+    </section>
+
+    <section id="listaPostagens">
+        <h2>Postagens recentes</h2>
+    </section>
+
+    <button id="logoutBtn" style="display: none;">Sair</button>
 </main>
 
 
