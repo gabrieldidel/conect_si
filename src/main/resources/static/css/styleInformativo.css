@@ -136,22 +136,23 @@ main {
     line-height: 1.2;
 }
 
-.containerVideo{
+.containerVideo {
+    position: relative;
     width: 100%;
-    position: relative; 
-    padding-bottom: 56.25%; 
-    height: 0;
-    border: solid 4px #0c7e7e;
+    max-width: 300px;
+    margin: 0 auto;
+    aspect-ratio: 9 / 16;
     overflow: hidden;
-    max-width: 800px;
+    border-radius: 16px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .containerVideo iframe {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
+    left: 0;
+    top: 0;
 }
 
 .estruturaCurricular {
