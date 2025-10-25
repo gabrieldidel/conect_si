@@ -17,13 +17,13 @@
         <div class="linha"></div>
         <div class="linha"></div>
         <div class="linha"></div>
-    </button> 
+    </button>
     <nav class="navBar">
         <ul>
             <li>
                 <a href="home-logged.html">Home</a>
             </li>
-                
+
             <li>
                 <a href="informativo.html">O que é BSI</a>
             </li>
@@ -41,26 +41,36 @@
 
 <canvas id="particulasCanva"></canvas>
 
-<main>
-    <section id="novaPostagem">
-        <h2>Criar Postagem</h2>
+<main id="containerPostagens">
+    <section id="novaPostagem" style="display: none;">
+        <h2>Criar nova postagem</h2>
         <form id="postForm">
-            <input type="text" id="titulo" placeholder="Título" required>
-            <textarea id="conteudo" placeholder="Conteúdo" required></textarea>
+            <div>
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required />
+            </div>
+
+            <div>
+                <label for="conteudo">Conteúdo:</label>
+                <textarea id="conteudo" name="conteudo" rows="5" required></textarea>
+            </div>
+
             <button type="submit">Publicar</button>
         </form>
-        <p id="mensagemPost" style="color:green;"></p>
+        <p id="mensagemPost"></p>
     </section>
 
-    <section id="postagens">
-        <h2>Últimas Postagens</h2>
+    <section id="listaPostagens">
+        <h2>Postagens recentes</h2>
     </section>
+
+    <button id="logoutBtn" style="display: none;">Sair</button>
 </main>
 
 
 <footer>
     <p>&copy; 2025 Curso de BSI | Redes Sociais:</p>
-    <section class="redeSocial"> 
+    <section class="redeSocial">
         <a href="https://www.instagram.com/_code.flow/" id="instagram">
             <img width="48" height="48" src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new"/>
         </a>

@@ -30,6 +30,7 @@ header {
     padding: 0 5%;
     /* Z-index baixo para o header principal */
     z-index: 10; 
+    background-color: #000706c2;
 }
 
 #containerLogo {
@@ -142,22 +143,24 @@ main {
     line-height: 1.2;
 }
 
-.containerVideo{
+.containerVideo, .vantagensDoCurso {
+    position: relative;
     width: 100%;
-    position: relative; 
-    padding-bottom: 56.25%; 
-    height: 0;
-    border: solid 4px #0c7e7e;
-    overflow: hidden;
     max-width: 800px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border: solid 4px #134647;
 }
 
-.containerVideo iframe {
+.containerVideo iframe, .vantagensDoCurso iframe {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
+    left: 0;
+    top: 0;
 }
 
 .estruturaCurricular {
@@ -170,7 +173,7 @@ main {
     margin-top: 50px;
 }
 
-.estruturaCurricular h3, .mercadoDeTrabalho h3, .ondeEstudar h3, #postagens h2{
+.estruturaCurricular h3, .mercadoDeTrabalho h3, .ondeEstudar h3, #postagens h2, .curiosidadesBSI h3{
     font-size: 60px;
     margin-bottom: 80px;
     text-align: center;
@@ -280,6 +283,50 @@ main {
     width: 100vw;
     height: auto;
     padding: 0 50px;
+}
+
+.containerCuriosidades{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerCarreira{
+    list-style: none;
+    width: 90%;
+    height: 100%;
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 100px;
+}
+
+.containerCarreira li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: justify;
+    font-size: 32px;
+    gap: 20px;
+    background-color: #000706b0;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.5s;
+}
+
+.containerCarreira li:hover{
+    background-color: #00272d;
+    border-color: solid 3px #0c7e7e;
+	transform: scale(1.1);
+    border-radius: 10px;
+}
+
+.containerCarreira h4{
+    font-size: 44px;
+    text-align: center;
 }
 
 #localizacao{
@@ -405,8 +452,6 @@ footer p {
         width: 100%; 
     }
 
-
-
     .quadros span {
         margin-left: 40px;
         width: 25vw; 
@@ -415,8 +460,9 @@ footer p {
        transition: 0.5s;
     }
     
-	.quadros span:hover{
+	.quadros span:hover, .containerCarreira li:hover{
 		background-color: #00272d;
+        border-color: solid 3px #0c7e7e;
   		transform: scale(1.1);
         border-radius: 10px;
 	}
@@ -475,6 +521,46 @@ footer p {
         font-size: 20px;
         text-align: center;
         width: 75vw;
+    }
+
+    .curiosidadesBSI{
+        height: 136vh;
+    }
+
+    .containerCuriosidades{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        width: 100vw;
+        gap: 30px;
+    }
+
+    .containerCarreira{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .containerCarreira li{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: justify;
+        width: 70vw;
+        font-size: 20px;
+        gap: 20px;
+        background-color: #000706b0;
+        border-radius: 10px;
+        padding: 20px;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+
+    .containerCarreira li h4{
+        font-size: 26px;
     }
 
     #postagens h2{

@@ -39,6 +39,10 @@ cadastroForm.addEventListener('submit', async (e) => {
     cadastroMessage.style.color = 'green';
     cadastroForm.reset();
 
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 2000);
+
   } catch (err) {
     cadastroMessage.textContent = 'Erro ao cadastrar: ' + err.message;
     cadastroMessage.style.color = 'red';
