@@ -18,15 +18,18 @@ public class PostagemService {
     private final PostagemRepository postagemRepository;
     private final UsuarioRepository usuarioRepository;
 
+    // Lista todas as postagens
     public List<Postagem> listarPostagens() {
         return postagemRepository.findAll();
     }
 
+    // Busca uma postagem por ID
     public Optional<Postagem> buscarPorId(Integer id) {
         return postagemRepository.findById(id);
     }
 
-    public Postagem salvarPostagem(String authorization, PostagemDTO postagemDTO) {
+    // Cria uma nova postagem
+    public Postagem criarPostagem(String authorization, PostagemDTO postagemDTO) {
         Long userId = JwtService.extractId(authorization);
 
         Usuario usuario = usuarioRepository.findById(userId)
@@ -40,6 +43,18 @@ public class PostagemService {
         return postagemRepository.save(postagem);
     }
 
+    // Atualiza uma postagem existente
+    public Postagem atualizarPostagem(Integer id, PostagemDTO postagemDTO) {
+        Postagem postagem = postagemRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Postagem não encontrada."));
+
+        postagem.setTitulo(postagemDTO.getTitulo());
+        postagem.setConteudo(postagemDTO.getConteudo());
+
+        return postagemRepository.save(postagem);
+    }
+
+    // Deleta uma postagem
     public void deletarPostagem(Integer id) {
         postagemRepository.deleteById(id);
     }

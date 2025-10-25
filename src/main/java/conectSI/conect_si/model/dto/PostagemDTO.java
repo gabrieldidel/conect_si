@@ -1,20 +1,14 @@
 package conectSI.conect_si.model.dto;
 
-import lombok.AllArgsConstructor;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 public class PostagemDTO {
+    @NotBlank(message = "O título não pode estar vazio.")
     private String titulo;
+
+    @NotBlank(message = "O conteúdo não pode estar vazio.")
     private String conteudo;
-    private Integer usuario;
-
-    public PostagemDTO (String titulo, String conteudo, Integer usuario) {
-        this.titulo = titulo;
-        this.conteudo = conteudo;
-        this.usuario = usuario;
-
-    }
 }
+
