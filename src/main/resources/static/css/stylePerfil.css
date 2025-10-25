@@ -1,12 +1,120 @@
+.containerPerfil{
+    width: 100%;
+    height: 50vh;
+    background-color: #000706b0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 80px;
+}
+
+#fotoPerfil{
+    display: none;
+}
+
+.labelPerfil{
+    width: 60vw;
+    height: 30vh;
+    border-radius: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue
+}
+
+.labelPerfil svg{
+    width: 80%;
+    height: 80%;
+}
+
+#nomePerfil{
+    font-size: 4rem;
+}
+
+#emailPerfil{
+    font-size: 50px;
+    text-align: center;
+}
+
 #perfilPostagens{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 90vw;
-    margin-top: 200px;
+    height: 31vh;
+    margin-top: 55px;
 }
 
-#perfilPostagens h2{
-    font-size: 70px;
-    text-align: center;
+#editarPerfil{
+    width: 60%;
+    height: 20%;
+    font-size: 60px;
+    cursor: pointer;
+    background-color: #000706b0;
+}
+
+#listaMinhasPostagens{
+    width: 100vw;
+    height: auto;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+/* RESPONSIVIDADE PARA PC*/
+
+@media(min-width: 990px){
+    main{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .containerPerfil{
+        width: 40vw;
+        height: 63vh;
+        gap: 20px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .labelPerfil{
+        width: 20vw;
+        height: 35vh;
+        margin-top: 0px;
+    }
+
+    #nomePerfil{
+        font-size: 2rem;
+    }
+
+    #emailPerfil{
+        font-size: 25px;
+    }
+
+    #perfilPostagens{
+        width: 40vw;
+        height: 10vh;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        background-color: #000706b0;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    #editarPerfil{
+        font-size: 26px;
+        width: 18vw;
+        height: 8vh;
+        transition: 0.5s;
+    }
+
+    #editarPerfil:hover{
+        background-color: #0c7e7e;
+        color: #ffffff;
+        transform: scale(1.05);
+    }
 }

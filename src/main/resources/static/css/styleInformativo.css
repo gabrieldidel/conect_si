@@ -45,7 +45,13 @@ header {
     background-color: rgb(241, 241, 241);
     width: 90px;
     height: 90px;
+    overflow: hidden;
     border-radius: 100%;
+}
+
+#logo img{
+    width: 100%;
+    height: 100%;
 }
 
 #btnNavegacao {
@@ -189,9 +195,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* Força os elementos a não encolherem */
     flex-shrink: 0; 
-    /* Ajusta o ponto de parada do scroll */
     scroll-snap-align: center;
     width: 80vw;
     max-width: 60%; 
@@ -199,11 +203,11 @@ main {
     background-color: #000706b0;
     border-radius: 10px;
     padding: 20px;
-    margin-right: 60px; /* Espaçamento entre os quadros */
+    margin-right: 60px;
 }
 
 .quadros span:last-child {
-    margin-right: 5%; /* Espaçamento no final do carrossel */
+    margin-right: 5%;
 }
 
 .quadros span h4 {
@@ -408,16 +412,18 @@ footer p {
         width: 25vw; 
         height: auto;
         margin-right: 0; 
-       
+       transition: 0.5s;
     }
     
 	.quadros span:hover{
 		background-color: #00272d;
   		transform: scale(1.1);
+        border-radius: 10px;
 	}
 
     .quadros span h4 {
         font-size: 27px;
+        transform: scale(1.1);
     }
 
     .quadros span p, .listIcones li p{

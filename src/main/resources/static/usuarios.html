@@ -9,7 +9,7 @@
 <body>
 <header>
     <section id="containerLogo">
-        <div id="logo"></div>
+        <div id="logo"><img src="../img/imgLogo.jpg" alt=""></div>
         <h1>ConectSI</h1>
     </section>
 
@@ -42,7 +42,19 @@
 <canvas id="particulasCanva"></canvas>
 
 <main>
+    <section id="novaPostagem">
+        <h2>Criar Postagem</h2>
+        <form id="postForm">
+            <input type="text" id="titulo" placeholder="Título" required>
+            <textarea id="conteudo" placeholder="Conteúdo" required></textarea>
+            <button type="submit">Publicar</button>
+        </form>
+        <p id="mensagemPost" style="color:green;"></p>
+    </section>
 
+    <section id="postagens">
+        <h2>Últimas Postagens</h2>
+    </section>
 </main>
 
 
