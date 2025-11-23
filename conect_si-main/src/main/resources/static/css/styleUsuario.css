@@ -1,0 +1,190 @@
+/* ====== CONTAINER GERAL ====== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden; /* evita barras de rolagem duplas */
+    scroll-behavior: smooth; /* rolagem suave */
+}
+
+/* ====== HEADER FIXO + BLUR ====== */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    padding: 0 5%;
+}
+
+/* Logo */
+#containerLogo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#containerLogo h1 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+/* ====== MENU ====== */
+.navBar ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+}
+
+.navBar a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navBar a:hover {
+    color: #ffffff;
+}
+
+/* ====== MAIN (Área Rolável) ====== */
+main {
+    flex: 1;
+    overflow-y: auto; /* rolagem vertical */
+    padding: 120px 2rem 80px 2rem; /* topo, direita, base, esquerda */
+    max-width: 900px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* ====== NOVA POSTAGEM ====== */
+#novaPostagem {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255, 77, 0, 0.3);
+    margin-bottom: 2rem;
+}
+
+#novaPostagem h2 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+#postForm label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+#postForm input,
+#postForm textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+#postForm button {
+    background: #ADD8E6;
+    border: none;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+#postForm button:hover {
+    background: #ADD8E6;
+}
+
+/* ====== LISTA DE POSTAGENS ====== */
+#listaPostagens {
+    background: #111;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+#listaPostagens h2 {
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.postagem {
+    background: #1c1c1c;
+    border-left: 4px solid #ADD8E6;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: 0.3s;
+}
+
+.postagem:hover {
+    transform: scale(1.01);
+    background: #222;
+}
+
+.postagem h3 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.postagem small {
+    display: block;
+    color: #bbb;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+}
+
+    footer {
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    footer p {
+        font-size: 18px;
+        margin: 0;
+    }
+
+.redeSocial a img {
+    transition: 0.3s;
+}
+
+.redeSocial a:hover img {
+    transform: scale(1.1);
+}
+
+/* ====== SCROLLBAR ESTILIZADA ====== */
+main::-webkit-scrollbar {
+    width: 8px;
+}
+
+main::-webkit-scrollbar-thumb {
+    background-color: #ADD8E6;
+    border-radius: 10px;
+}
+
+main::-webkit-scrollbar-thumb:hover {
+    background-color: #ADD8E6;
+}

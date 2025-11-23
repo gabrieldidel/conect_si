@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Área Interativa - Curso de BSI</title>
+    <link rel="stylesheet" href="css/styleUsuario.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <section id="containerLogo">
+        <div id="logo"><img src="../img/imgLogo.jpg" alt=""></div>
+        <h1>ConectSI</h1>
+    </section>
+
+    <button id="btnNavegacao">
+        <div class="linha"></div>
+        <div class="linha"></div>
+        <div class="linha"></div>
+    </button>
+    <nav class="navBar">
+        <ul>
+            <li>
+                <a href="home-logged.html">Home</a>
+            </li>
+
+            <li>
+                <a href="informativo.html">O que é BSI</a>
+            </li>
+
+            <li>
+                <a href="usuarios.html">Área interativa</a>
+            </li>
+
+            <li>
+                <a href="perfil.html">Meu Perfil</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<canvas id="particulasCanva"></canvas>
+
+<main id="containerPostagens">
+    <section id="novaPostagem" style="display: none;">
+        <h2>Criar nova postagem</h2>
+        <form id="postForm">
+            <div>
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required />
+            </div>
+
+            <div>
+                <label for="conteudo">Conteúdo:</label>
+                <textarea id="conteudo" name="conteudo" rows="5" required></textarea>
+            </div>
+
+            <button type="submit">Publicar</button>
+        </form>
+        <p id="mensagemPost"></p>
+    </section>
+
+    <section id="listaPostagens">
+        <h2>Postagens recentes</h2>
+    </section>
+
+    <button id="logoutBtn" style="display: none;">Sair</button>
+</main>
+
+
+<footer>
+    <p>&copy; 2025 Curso de BSI | Redes Sociais:</p>
+    <section class="redeSocial">
+        <a href="https://www.instagram.com/_code.flow/" id="instagram">
+            <img width="48" height="48" src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new"/>
+        </a>
+
+        <a href="https://www.linkedin.com/in/paulo-henrique-barcelos-07b950310/" id="linkedin">
+            <img width="48" height="48" src="https://img.icons8.com/fluency/48/linkedin.png" alt="linkedin"/>
+        </a>
+    </section>
+</footer>
+
+<script src="js/menu.js"></script>
+<script src="js/usuarios.js"></script>
+<script src="js/particulas.js"></script>
+</body>
+</html>

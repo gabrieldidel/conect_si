@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#000706, #00272d);
+    background-size: cover;
+    width: 100vw;
+    min-height: 100vh;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    padding: 0 5%;
+    background-color: #000706c2;
+}
+
+#containerLogo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#logo {
+    background-color: rgb(241, 241, 241);
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+#logo img{
+    width: 100%;
+    height: 100%;
+}
+
+#btnNavegacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 80px;
+    height: 65px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 12;
+}
+
+.linha {
+    margin: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #0c7e7e;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navBar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: #00272d;
+    width: 70vw;
+    height: 100vh;
+    z-index: 11;
+    transition: right 0.3s ease;
+    padding-top: 120px;
+}
+
+.navBar.ativo {
+    right: 0;
+}
+
+.navBar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    height: auto;
+}
+
+.navBar ul li a {
+    font-size: 45px;
+    display: block;
+    padding: 40px 0;
+    border-bottom: solid 6px #000706;
+}
+
+#particulasCanva{
+    display: block;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 120px - 60px); 
+    padding-bottom: 50px;
+}
+
+#containerTitulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    margin-top: 200px;
+}
+
+#containerTitulo h2 {
+    font-size: 90px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+#containerTitulo p {
+    margin-top: 20px;
+    font-size: 38px;
+    text-align: center;
+}
+
+#login-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    width: 80vw;
+    background-color: #000706b0;
+    border-radius: 20px;
+    padding: 30px 20px;
+    height: 40vh;
+}
+
+#login-section h2 {
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    width: 100%;
+}
+
+#loginForm input, button {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-size: 36px;
+    border: solid 4px #0c7e7e;
+    transition: 0.5s;
+    background-color: transparent;
+    color: #0c7e7e;
+    padding: 0 10px;
+}
+
+#loginForm input, #loginForm input::placeholder {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#loginForm button:hover {
+    background-color: #0c7e7e;
+    color: #ffffff;
+}
+
+#cadastro {
+    background-color: #0c7e7e;
+    border: none;
+    line-height: 50px;
+}
+
+#cadastro a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+}
+
+footer {
+    background-color: #000706b0;
+    height: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.redeSocial {
+    margin-top: 8px;
+    gap: 22px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#instagram, #linkedin {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    border: none;
+}
+
+#instagram img, #linkedin img{
+    width: 100%;
+    height: 100%;
+}
+
+/* MEDIA QUERY PARA DESKTOP (PC)*/
+@media (min-width: 992px) {
+    header {
+        justify-content: space-around;
+        height: 70px;
+        padding: 0;
+    }
+    #containerLogo {
+        font-size: 15px;
+    }
+    #logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    #btnNavegacao {
+        display: none;
+    }
+
+    .navBar {
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        padding-top: 0;
+    }
+
+    .navBar ul {
+        flex-direction: row;
+        gap: 30px;
+        height: auto;
+    }
+
+    .navBar ul li a {
+        font-size: 20px;
+        display: block;
+        padding: 0;
+        border: none;
+        transition: 0.5s;
+    }
+
+	.navBar ul li a:hover{
+		transform: scale(1.2);
+		border-radius: 0.5;
+	}
+
+    main {
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        height: calc(100vh - 70px - 10px);
+        padding-bottom: 50px;
+    }
+
+    #containerTitulo {
+        width: 40vw;
+        height: auto;
+        margin-top: 140px;
+    }
+
+    #containerTitulo h2 {
+        font-size: 60px;
+    }
+
+    #containerTitulo p {
+        margin-top: 40px;
+        font-size: 30px;
+    }
+
+    #login-section {
+        width: 50vw;
+        max-width: none;
+        height: auto;
+        padding: 40px;
+    }
+
+    #login-section h2 {
+        font-size: 35px;
+    }
+
+    #loginForm input, button {
+        height: 55px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+    
+	#loginButtom{
+		height: 55px;
+        font-size: 18px;
+        cursor: pointer;
+	}
+
+	#loginButtom:hover{
+		background-color: #0c7e7e;
+  		transform: scale(1.05);
+	}
+
+    #cadastro {
+        line-height: 55px;
+    }
+    
+	#cadastro:hover{
+		background-color: #0c7e7e;
+  		transform: scale(1.05);
+	}
+
+    footer {
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    footer p {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .redeSocial {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0;
+        gap: 10px;
+    }
+
+    #instagram, #linkedin {
+        width: 50px;
+        height: 50px;
+    }
+}

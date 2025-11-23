@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil - Curso de BSI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylePerfil.css">
+</head>
+<body>
+<header>
+    <section id="containerLogo">
+        <div id="logo"><img src="../img/imgLogo.jpg" alt=""></div>
+        <h1>ConectSI</h1>
+    </section>
+
+    <button id="btnNavegacao">
+        <div class="linha"></div>
+        <div class="linha"></div>
+        <div class="linha"></div>
+    </button> 
+        <nav class="navBar">
+            <ul>
+                <li>
+                    <a href="home-logged.html">Home</a>
+                </li>
+                
+                <li>
+                    <a href="informativo.html">O que é BSI</a>
+                </li>
+
+                <li>
+                    <a href="usuarios.html">Área interativa</a>
+                </li>
+
+                <li>
+                    <a href="perfil.html">Meu Perfil</a>
+                </li>
+                <li>
+                    <a href="#" id="logoutBtn">Sair</a>
+                </li>
+            </ul>
+        </nav>
+</header>
+
+<canvas id="particulasCanva"></canvas>
+
+<main>
+    <section class="containerPerfil">
+        <label for="fotoPerfil" class="labelPerfil"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title/><g id="about"><path d="M16,16A7,7,0,1,0,9,9,7,7,0,0,0,16,16ZM16,4a5,5,0,1,1-5,5A5,5,0,0,1,16,4Z"/><path d="M17,18H15A11,11,0,0,0,4,29a1,1,0,0,0,1,1H27a1,1,0,0,0,1-1A11,11,0,0,0,17,18ZM6.06,28A9,9,0,0,1,15,20h2a9,9,0,0,1,8.94,8Z"/></g></svg></label>
+        <input id="fotoPerfil" type="file" accept="image/*">
+        <div class="containerNomeEemail">
+            <h2 id="nomePerfil">Paulo Henrique B.Gonçalves</h2>
+            <p id="emailPerfil">exemplo@gmail.com</p>
+        </div>
+    </section>
+
+    <section id="perfilPostagens">
+        <button id="editarPerfil">Editar perfil</button>
+        <div id="listaMinhasPostagens"></div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Curso de BSI | Redes Sociais:</p>
+    <section class="redeSocial"> 
+        <a href="https://www.instagram.com/_code.flow/" id="instagram">
+            <img width="48" height="48" src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new"/>
+        </a>
+
+        <a href="https://www.linkedin.com/in/paulo-henrique-barcelos-07b950310/" id="linkedin">
+            <img width="48" height="48" src="https://img.icons8.com/fluency/48/linkedin.png" alt="linkedin"/>
+        </a>
+    </section>
+</footer>
+
+<script src="js/menu.js"></script>
+<script src="js/perfil.js"></script>
+<script src="js/particulas.js"></script>
+</body>
+</html>

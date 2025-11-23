@@ -1,0 +1,596 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.bodyUsuario{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#000706, #00272d);
+    background-size: cover;
+    width: 100vw;
+    min-height: 100vh;
+    color: #ffffff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    padding: 0 5%;
+    /* Z-index baixo para o header principal */
+    z-index: 10; 
+    background-color: #000706c2;
+}
+
+#containerLogo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#logo {
+    background-color: rgb(241, 241, 241);
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+#logo img{
+    width: 100%;
+    height: 100%;
+}
+
+#btnNavegacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 80px;
+    height: 65px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    /* Z-index acima de tudo, inclusive da navBar */
+    z-index: 100; 
+}
+
+.linha {
+    margin: 0;
+    width: 75%;
+    height: 7px;
+    background-color: #0c7e7e;
+}
+
+.navBar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: #00272d;
+    width: 70vw;
+    height: 100vh;
+    /* Z-index alto para ficar sobre o vídeo quando ativo */
+    z-index: 90; 
+    transition: right 0.3s ease;
+    padding-top: 120px;
+}
+
+.navBar.ativo {
+    right: 0;
+}
+
+.navBar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    height: auto;
+}
+
+.navBar ul li a {
+    font-size: 45px;
+    display: block;
+    padding: 40px 0;
+    border-bottom: solid 6px #000706;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+#particulasCanva{
+    display: block;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.tituloEvideo {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    width: 90vw;
+    padding-top: 150px; 
+    margin-bottom: 50px;
+}
+
+.tituloEvideo h2 {
+    font-size: 90px;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+.containerVideo, .vantagensDoCurso {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border: solid 4px #134647;
+}
+
+.containerVideo iframe, .vantagensDoCurso iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.estruturaCurricular {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.estruturaCurricular h3, .mercadoDeTrabalho h3, .ondeEstudar h3, #postagens h2, .curiosidadesBSI h3{
+    font-size: 60px;
+    margin-bottom: 80px;
+    text-align: center;
+    padding: 0 10px;
+    color: #0c7e7e;
+}
+
+.estruturaCurricular .quadros {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100vw;
+    height: auto;
+    padding: 0 5%;
+    overflow-x: scroll; 
+    /* Melhoria de UX: Força o snap ao iniciar a rolagem */
+    scroll-snap-type: x mandatory; 
+    -ms-overflow-style: none; /* Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.quadros span {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-shrink: 0; 
+    scroll-snap-align: center;
+    width: 80vw;
+    max-width: 60%; 
+    height: auto; 
+    background-color: #000706b0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 60px;
+}
+
+.quadros span:last-child {
+    margin-right: 5%;
+}
+
+.quadros span h4 {
+    font-size: 40px; 
+    text-align: center;
+}
+
+.quadros span p, .listIcones li p, .ondeEstudar p{
+    text-align: justify;
+    font-size: 32px; 
+}
+
+.mercadoDeTrabalho {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.listIcones {
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+    gap: 20px;
+    height: auto;
+}
+
+.listIcones li {
+    display: flex;
+    flex-direction: row; 
+    margin-inline: 10px;
+    gap: 20px;
+    margin-bottom: 50px; 
+    width: 100%;
+    align-items: center; 
+    padding: 0 40px;
+    text-align: left;
+}
+
+.listIcones li span {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* Define um tamanho fixo para o ícone */
+    flex-shrink: 0; 
+    width: 220px; 
+    height: 220px;
+    border-radius: 100%;
+    background-color: #134647;
+}
+
+.listIcones li #flexivel svg, .listIcones li #grafico svg {
+    width: 150px; 
+    height: 150px;
+}
+
+.listIcones li #fogo svg{
+    width: 190px; 
+    height: 190px;
+}
+
+.ondeEstudar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    width: 100vw;
+    height: auto;
+    padding: 0 50px;
+}
+
+.containerCuriosidades{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerCarreira{
+    list-style: none;
+    width: 90%;
+    height: 100%;
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 100px;
+}
+
+.containerCarreira li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: justify;
+    font-size: 32px;
+    gap: 20px;
+    background-color: #000706b0;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.5s;
+}
+
+.containerCarreira li:hover{
+    background-color: #00272d;
+    border-color: solid 3px #0c7e7e;
+	transform: scale(1.1);
+    border-radius: 10px;
+}
+
+.containerCarreira h4{
+    font-size: 44px;
+    text-align: center;
+}
+
+#localizacao{
+    width: 80vw;
+    height: 20vh;
+    margin-bottom: 50px;
+}
+
+footer {
+    background-color: #000706b0;
+    height: auto;
+    text-align: center;
+    padding: 20px;
+    width: 101vw;
+}
+
+footer p {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.redeSocial {
+    margin-top: 8px;
+    gap: 22px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#instagram, #linkedin {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    border: none;
+}
+
+#instagram img, #linkedin img{
+    width: 100%;
+    height: 100%;
+}
+
+/* *******************************************
+* MEDIA QUERY PARA DESKTOP (PC) - ACIMA DE 992px *
+*******************************************
+*/
+@media (min-width: 992px) {
+    header{
+        justify-content: space-around;
+        height: 70px;
+        padding: 0;
+    }
+
+    #containerLogo {
+        font-size: 15px;
+    }
+    #logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    #btnNavegacao {
+        display: none; 
+    }
+    
+    .navBar {
+        z-index: auto; 
+        position: static; 
+        width: auto;
+        height: auto;
+        padding-top: 0;
+        right: 0;
+        background-color: transparent;
+    }
+
+    .navBar ul {
+        flex-direction: row;
+        padding: 0;
+        gap: 40px;
+    }
+    
+    .navBar ul li a {
+        font-size: 18px;
+        padding: 0;
+        border-bottom: none;
+        transition: 0.5s;
+    }
+
+	.navBar ul li a:hover{
+		transform: scale(1.2);
+		border-radius: 0.5;
+	}
+
+    /* MAIN GERAL */
+    .tituloEvideo {
+        width: 800px;
+        padding-top: 100px; 
+        margin-bottom: 10px;
+    }
+
+    .tituloEvideo h2 {
+        font-size: 60px;
+        margin-bottom: 50px;
+    }
+
+    .estruturaCurricular {
+        margin-bottom: 10px;
+        width: 100vw;
+    }
+
+    .estruturaCurricular h3, .mercadoDeTrabalho h3, .ondeEstudar h3{
+        margin-top: 0;
+        font-size: 50px;
+        margin-bottom: 50px;
+    }
+
+    .estruturaCurricular .quadros {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%; 
+    }
+
+    .quadros span {
+        margin-left: 40px;
+        width: 25vw; 
+        height: auto;
+        margin-right: 0; 
+       transition: 0.5s;
+    }
+    
+	.quadros span:hover, .containerCarreira li:hover{
+		background-color: #00272d;
+        border-color: solid 3px #0c7e7e;
+  		transform: scale(1.1);
+        border-radius: 10px;
+	}
+
+    .quadros span h4 {
+        font-size: 27px;
+        transform: scale(1.1);
+    }
+
+    .quadros span p, .listIcones li p{
+        font-size: 20px;
+    }
+    
+    .mercadoDeTrabalho {
+        width: 80%;
+    }
+
+    .listIcones li {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-inline: 0;
+        gap: 50px;
+        margin-bottom: 50px; 
+        align-items: center;
+    }
+
+    .listIcones li span {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .listIcones li #flexivel svg, .listIcones li #grafico svg {
+        width: 100px;
+        height: 100px;
+    }
+
+    .listIcones li #fogo svg{
+        width: 130px;
+        height: 130px;
+    }
+    
+    .ondeEstudar{
+        margin-top: 0;
+        margin-bottom: 50px;
+        width: 100vw;
+        text-align: center;
+    }
+
+    #localizacao{
+        width: 60vw;
+        height: 50vh;
+        margin-bottom: 50px;
+    }
+
+    .ondeEstudar p{
+        font-size: 20px;
+        text-align: center;
+        width: 75vw;
+    }
+
+    .curiosidadesBSI{
+        height: 136vh;
+    }
+
+    .containerCuriosidades{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        width: 100vw;
+        gap: 30px;
+    }
+
+    .containerCarreira{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .containerCarreira li{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: justify;
+        width: 70vw;
+        font-size: 20px;
+        gap: 20px;
+        background-color: #000706b0;
+        border-radius: 10px;
+        padding: 20px;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+
+    .containerCarreira li h4{
+        font-size: 26px;
+    }
+
+    #postagens h2{
+        margin-bottom: 0;
+        font-size: 50px;
+    }
+
+    footer {
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    footer p {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .redeSocial {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0;
+        gap: 10px;
+    }
+
+    #instagram, #linkedin {
+        width: 50px;
+        height: 50px;
+    }
+}
