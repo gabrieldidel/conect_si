@@ -135,47 +135,46 @@ h2 {
 }
 
 .container-slide{
-    width: auto;
-    height: auto;
+    width: 800px;
+    height: 500px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+    overflow: hidden;
 }
 
 .slides{
     display: flex;
     flex-direction: row;
-    width: 800px;
-    height: 500px;
-    border: solid 3px #134647;
-    overflow: hidden;
+    justify-content: flex-start;
+    width: 200%;
+    height: 100%;
+    border-bottom: solid 3px #134647;
+}
+
+.slides input{
+    display: none;
 }
 
 .slider{
-    width: 200%;
+    width: 50%;
     height: 100%;
-    opacity: 0;
     transition: 0.3s;
     position: relative;
 }
 
-.on{
-    opacity: 1;
+.slider iframe{
+    width: 800px;
+    height: 100%;
 }
 
-#prevBtn, #nextBtn{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
+.manual-navigation{
+    z-index: 2;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
+    width: auto;
+    height: auto;
+    gap: 1rem;
+    margin-top: 10px;
 }
 
 #prevBtn svg, #nextBtn svg{
@@ -185,6 +184,29 @@ h2 {
 
 #prevBtn{
     transform: rotate(180deg);
+}
+
+.radio-navigation{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#radio1:checked ~ .on{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .on{
+    margin-left: -50.3%;
+}
+
+.btn-navigation{
+    width: 95vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .estruturaCurricular {
@@ -442,6 +464,7 @@ footer p {
 
 	.navBar ul li a:hover{
 		transform: scale(1.2);
+        color: #0c7e7e;
 		border-radius: 0.5;
 	}
 
@@ -452,9 +475,11 @@ footer p {
         padding-top: 14vh;
     }
 
-    .slides{
-        width: 900px;
+    .radio-navigation{
+        width: 50px;
+        height: 50px;
     }
+
 
     .estruturaCurricular {
         margin-bottom: 10px;
