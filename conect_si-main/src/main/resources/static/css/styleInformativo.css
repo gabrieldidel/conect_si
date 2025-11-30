@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .bodyUsuario{
     font-family: Arial, sans-serif;
     background: linear-gradient(#000706, #00272d);
@@ -113,7 +114,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
     padding-bottom: 50px;
 }
 
@@ -127,40 +127,64 @@ main {
     z-index: -2;
 }
 
-.tituloEvideo {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    width: 90vw;
-    padding-top: 150px; 
-    margin-bottom: 50px;
-}
-
-.tituloEvideo h2 {
-    font-size: 90px;
+h2 {
+    font-size: 60px;
     text-align: center;
     margin-bottom: 40px;
-    line-height: 1.2;
+    padding-top: 10vh;
 }
 
-.containerVideo, .vantagensDoCurso {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    aspect-ratio: 16 / 9;
+.container-slide{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.slides{
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    height: 500px;
+    border: solid 3px #134647;
     overflow: hidden;
-    border-radius: 16px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border: solid 4px #134647;
 }
 
-.containerVideo iframe, .vantagensDoCurso iframe {
-    position: absolute;
+.slider{
+    width: 200%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.3s;
+    position: relative;
+}
+
+.on{
+    opacity: 1;
+}
+
+#prevBtn, #nextBtn{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+#prevBtn svg, #nextBtn svg{
     width: 100%;
     height: 100%;
-    left: 0;
-    top: 0;
+}
+
+#prevBtn{
+    transform: rotate(180deg);
 }
 
 .estruturaCurricular {
@@ -286,7 +310,7 @@ main {
 }
 
 .containerCuriosidades{
-    height: 70vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -301,7 +325,6 @@ main {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin-bottom: 100px;
 }
 
 .containerCarreira li{
@@ -423,15 +446,14 @@ footer p {
 	}
 
     /* MAIN GERAL */
-    .tituloEvideo {
-        width: 800px;
-        padding-top: 100px; 
-        margin-bottom: 10px;
+
+    h2{
+        font-size: 55px;
+        padding-top: 14vh;
     }
 
-    .tituloEvideo h2 {
-        font-size: 60px;
-        margin-bottom: 50px;
+    .slides{
+        width: 900px;
     }
 
     .estruturaCurricular {
@@ -457,19 +479,17 @@ footer p {
         width: 25vw; 
         height: auto;
         margin-right: 0; 
-       transition: 0.5s;
+        transition: 0.5s;
     }
     
 	.quadros span:hover, .containerCarreira li:hover{
 		background-color: #00272d;
         border-color: solid 3px #0c7e7e;
-  		transform: scale(1.1);
         border-radius: 10px;
 	}
 
     .quadros span h4 {
         font-size: 27px;
-        transform: scale(1.1);
     }
 
     .quadros span p, .listIcones li p{
@@ -574,6 +594,7 @@ footer p {
         justify-content: center;
         align-items: center;
         gap: 30px;
+        margin-top: 2.7rem;
     }
 
     footer p {

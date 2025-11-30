@@ -8,9 +8,9 @@ body {
     background: linear-gradient(#000706, #00272d);
     background-size: cover;
     width: 100vw;
-    min-height: 100vh;
+    height: auto;
     color: #ffffff;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 header {
@@ -281,7 +281,8 @@ footer p {
     }
 
 	.navBar ul li a:hover{
-		transform: scale(1.2);
+		transform: scale(1.1);
+        color: #0c7e7e;
 		border-radius: 0.5;
 	}
 

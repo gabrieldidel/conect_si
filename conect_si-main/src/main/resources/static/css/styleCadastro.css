@@ -1,4 +1,118 @@
-/* styleCadastro.css - Refatorado para Responsividade Total */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#000706, #00272d);
+    background-size: cover;
+    width: 100vw;
+    height: auto;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    padding: 0 5%;
+    background-color: #000706c2;
+}
+
+#containerLogo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#logo {
+    background-color: rgb(241, 241, 241);
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+#logo img{
+    width: 100%;
+    height: 100%;
+}
+
+#btnNavegacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 80px;
+    height: 65px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 12;
+}
+
+.linha {
+    margin: 0;
+    width: 75%;
+    height: 7px;
+    background-color: #0c7e7e;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navBar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: #00272d;
+    width: 70vw;
+    height: 100vh;
+    z-index: 11;
+    transition: right 0.3s ease;
+    padding-top: 120px;
+}
+
+.navBar.ativo {
+    right: 0;
+}
+
+.navBar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    height: auto;
+}
+
+.navBar ul li a {
+    font-size: 45px;
+    display: block;
+    padding: 40px 0;
+    border-bottom: solid 6px #000706;
+}
+
+#particulasCanva{
+    display: block;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
 
 main {
     display: flex;
@@ -15,10 +129,10 @@ main {
     justify-content: center;
     align-items: center;
     width: 80vw;
-    height: 40vh;
+    height: auto;
     background-color: #000706b0;
     border-radius: 20px;
-    padding: 30px 20px;
+    padding: 40px 30px;
     margin-top: 100px;
 }
 
@@ -61,7 +175,7 @@ main {
 }
 
 footer {
-    background-color: #134647;
+    background-color: #000706b0;
     height: auto;
     text-align: center;
     padding: 20px;
@@ -82,9 +196,17 @@ footer p {
 }
 
 #instagram, #linkedin {
-    width: 90px;
-    height: 90px;
-    border-radius: 10px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    border: none;
+}
+
+#instagram img, #linkedin img{
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -92,12 +214,59 @@ footer p {
 /* MEDIA QUERY PARA DESKTOP (PC) - ACIMA DE 992px */
 /* ******************************************* */
 @media (min-width: 992px) {
+    header {
+        justify-content: space-around;
+        height: 70px;
+        padding: 0;
+    }
+    #containerLogo {
+        font-size: 15px;
+    }
+    #logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    #btnNavegacao {
+        display: none;
+    }
+
+    .navBar {
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        padding-top: 0;
+    }
+
+    .navBar ul {
+        flex-direction: row;
+        gap: 30px;
+        height: auto;
+    }
+
+    .navBar ul li a {
+        font-size: 20px;
+        display: block;
+        padding: 0;
+        border: none;
+        transition: 0.5s;
+    }
+
+	.navBar ul li a:hover{
+		transform: scale(1.1);
+        color: #0c7e7e;
+		border-radius: 0.5;
+	}
+
     main {
-        min-height: calc(100vh - 150px - 100px);
+        height: auto;
+        padding-top: 1vh;
+        padding-bottom: 2rem;
+
     }
 
     #cadastro-section {
-        margin-top: 60px;
         width: 50vw;
         height: auto;
         padding: 40px;
@@ -109,7 +278,7 @@ footer p {
     }
 
     #cadastroForm {
-        margin-top: 30px;
+        margin-top: 0;
     }
 
     #cadastroForm input, #cadastroForm button {
@@ -119,7 +288,7 @@ footer p {
     }
 
     footer {
-        height: 100px;
+        height: 80px;
         display: flex;
         justify-content: center;
         align-items: center;
