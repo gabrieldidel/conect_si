@@ -1,9 +1,12 @@
 package conectSI.conect_si.services;
 
 import conectSI.conect_si.Core.SecurityConfig;
+import conectSI.conect_si.model.Postagem;
 import conectSI.conect_si.model.Usuario;
 import conectSI.conect_si.model.dto.LoginDTO;
+import conectSI.conect_si.model.dto.PostagemDTO;
 import conectSI.conect_si.model.dto.TokenDTO;
+import conectSI.conect_si.repository.PostagemRepository;
 import conectSI.conect_si.repository.UsuarioRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,6 +20,7 @@ import java.util.Optional;
 public class UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
+    private final PostagemRepository postagemRepository;
     private final SecurityConfig securityConfig;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
@@ -47,18 +51,35 @@ public class UsuarioService {
 
     public TokenDTO retornaInfoDoToken(String token) {
 
-        String email = JwtService.extractEmail(token);
-        String nome = JwtService.extractNome(token);
         Long id = JwtService.extractId(token);
 
+        assert id != null;
+        Usuario usuario = usuarioRepository.findById((long) id.intValue())
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+
+        // busca todas as postagens do usuário
+        List<Postagem> postagens = postagemRepository.findByUsuarioId(usuario.getId());
+
+        // converte para DTO exatamente no formato que você quer
+        List<PostagemDTO> postagemDTOs = postagens.stream()
+                .map(this::toPostagemDTO)
+                .toList();
+
         TokenDTO dto = new TokenDTO();
-        dto.setNome(nome);
-        dto.setEmail(email);
+        dto.setNome(usuario.getNome());
+        dto.setEmail(usuario.getEmail());
         dto.setToken(token);
+        dto.setPostagens(postagemDTOs);
 
         return dto;
     }
 
-
+    private PostagemDTO toPostagemDTO(Postagem postagem) {
+        return new PostagemDTO(
+                postagem.getTitulo(),
+                postagem.getConteudo(),
+                postagem.getUsuario().getId()
+        );
+    }
 
 }

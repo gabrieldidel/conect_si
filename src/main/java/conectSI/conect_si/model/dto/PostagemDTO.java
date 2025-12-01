@@ -1,5 +1,6 @@
 package conectSI.conect_si.model.dto;
 
+import conectSI.conect_si.model.Postagem;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,4 +18,6 @@ public class PostagemDTO {
         this.usuario = usuario;
 
     }
+
+
 }

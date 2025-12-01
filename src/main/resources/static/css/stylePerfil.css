@@ -118,3 +118,36 @@
         transform: scale(1.05);
     }
 }
+
+
+/* aplicar o mesmo estilo tanto na lista geral quanto na lista do perfil */
+#listaPostagens,
+#listaMinhasPostagens {
+    background: #111;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+#listaPostagens h2,
+#listaMinhasPostagens h2 {
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+/* .postagem continua igual, já serve pros dois */
+.postagem {
+    background: #1c1c1c;
+    border-left: 4px solid #ADD8E6;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: 0.3s;
+}
+
+.postagem:hover {
+    transform: scale(1.01);
+    background: #222;
+}
+
