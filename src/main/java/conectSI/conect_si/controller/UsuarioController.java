@@ -1,6 +1,7 @@
 package conectSI.conect_si.controller;
 
 import conectSI.conect_si.model.Usuario;
+import conectSI.conect_si.model.dto.TokenDTO;
 import conectSI.conect_si.services.UsuarioService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +31,14 @@ public class UsuarioController {
     @PostMapping
     public Usuario criarUsuario(@RequestBody Usuario usuario) {
         return usuarioService.salvarUsuario(usuario);
+    }
+
+    @GetMapping("/user-logado")
+    public ResponseEntity<TokenDTO> getUserLogado(@RequestHeader("Authorization") String authHeader) {
+        String token = authHeader.replace("Bearer ", "");
+
+        TokenDTO dto = usuarioService.retornaInfoDoToken(token);
+        return ResponseEntity.ok(dto);
     }
 
     @PutMapping("/{id}")

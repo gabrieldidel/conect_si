@@ -3,6 +3,7 @@ package conectSI.conect_si.services;
 import conectSI.conect_si.Core.SecurityConfig;
 import conectSI.conect_si.model.Usuario;
 import conectSI.conect_si.model.dto.LoginDTO;
+import conectSI.conect_si.model.dto.TokenDTO;
 import conectSI.conect_si.repository.UsuarioRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -43,6 +44,21 @@ public class UsuarioService {
     public void deletarUsuario(Long id) {
         usuarioRepository.deleteById(id);
     }
+
+    public TokenDTO retornaInfoDoToken(String token) {
+
+        String email = JwtService.extractEmail(token);
+        String nome = JwtService.extractNome(token);
+        Long id = JwtService.extractId(token);
+
+        TokenDTO dto = new TokenDTO();
+        dto.setNome(nome);
+        dto.setEmail(email);
+        dto.setToken(token);
+
+        return dto;
+    }
+
 
 
 }
