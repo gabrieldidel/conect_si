@@ -1,28 +1,4 @@
-/* ====== CONTAINER GERAL ====== */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-    background: #0a0a0a;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow: hidden; /* evita barras de rolagem duplas */
-    scroll-behavior: smooth; /* rolagem suave */
-}
 
-/* ====== HEADER FIXO + BLUR ====== */
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    height: 120px;
-    padding: 0 5%;
-}
 
 /* Logo */
 #containerLogo {
@@ -37,7 +13,6 @@ header {
     letter-spacing: 1px;
 }
 
-/* ====== MENU ====== */
 .navBar ul {
     list-style: none;
     display: flex;
@@ -56,7 +31,6 @@ header {
     color: #ffffff;
 }
 
-/* ====== MAIN (Área Rolável) ====== */
 main {
     flex: 1;
     overflow-y: auto; /* rolagem vertical */
@@ -66,7 +40,6 @@ main {
     box-sizing: border-box;
 }
 
-/* ====== NOVA POSTAGEM ====== */
 #novaPostagem {
     background: #1a1a1a;
     border: 1px solid #333;
@@ -154,18 +127,18 @@ main {
     font-size: 0.85rem;
 }
 
-    footer {
-        height: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-    }
+footer {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
 
-    footer p {
-        font-size: 18px;
-        margin: 0;
-    }
+footer p {
+    font-size: 18px;
+    margin: 0;
+}
 
 .redeSocial a img {
     transition: 0.3s;
