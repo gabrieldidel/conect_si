@@ -1,4 +1,4 @@
-const API_URL_USER_LOGADO = 'http://localhost:8080/usuarios/user-logado';
+const API_URL_USER_LOGADO = 'https://conectsi-production.up.railway.app/usuarios/user-logado';
 
 const nomePerfilEl = document.getElementById('nomePerfil');
 const emailPerfilEl = document.getElementById('emailPerfil');
