@@ -42,7 +42,7 @@ header {
     overflow: hidden;
 }
 
-#logo img{
+#logo svg{
     width: 100%;
     height: 100%;
 }
