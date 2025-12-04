@@ -146,7 +146,7 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    width: 200%;
+    width: 300%;
     height: 100%;
     border-bottom: solid 3px #134647;
 }
@@ -156,10 +156,11 @@ h2 {
 }
 
 .slider{
-    width: 50%;
+    width: 75%;
     height: 100%;
     transition: 0.3s;
     position: relative;
+    aspect-ratio: 9/16;
 }
 
 .slider iframe{
@@ -177,20 +178,21 @@ h2 {
     margin-top: 10px;
 }
 
-#prevBtn svg, #nextBtn svg{
-    width: 100%;
-    height: 100%;
-}
-
-#prevBtn{
-    transform: rotate(180deg);
-}
-
 .radio-navigation{
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     cursor: pointer;
+    border: solid 3px #134647;
+    transition: 0.4s;
+}
+
+.radio-navigation:hover{
+    background-color: #134647;
+}
+
+#radio1:checked ~ .radio-navigation{
+    background-color: #134647;
 }
 
 #radio1:checked ~ .on{
@@ -199,6 +201,10 @@ h2 {
 
 #radio2:checked ~ .on{
     margin-left: -50.3%;
+}
+
+#radio3:checked ~ .on{
+    margin-left: -150%;
 }
 
 .btn-navigation{
@@ -476,10 +482,9 @@ footer p {
     }
 
     .radio-navigation{
-        width: 50px;
-        height: 50px;
+        width: 30px;
+        height: 30px;
     }
-
 
     .estruturaCurricular {
         margin-bottom: 10px;
@@ -619,7 +624,6 @@ footer p {
         justify-content: center;
         align-items: center;
         gap: 30px;
-        margin-top: 2.7rem;
     }
 
     footer p {
