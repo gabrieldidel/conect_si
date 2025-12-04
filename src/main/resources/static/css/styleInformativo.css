@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .bodyUsuario{
     font-family: Arial, sans-serif;
     background: linear-gradient(#000706, #00272d);
@@ -113,7 +114,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
     padding-bottom: 50px;
 }
 
@@ -127,40 +127,86 @@ main {
     z-index: -2;
 }
 
-.tituloEvideo {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    width: 90vw;
-    padding-top: 150px; 
-    margin-bottom: 50px;
-}
-
-.tituloEvideo h2 {
-    font-size: 90px;
+h2 {
+    font-size: 60px;
     text-align: center;
     margin-bottom: 40px;
-    line-height: 1.2;
+    padding-top: 10vh;
 }
 
-.containerVideo, .vantagensDoCurso {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    aspect-ratio: 16 / 9;
+.container-slide{
+    width: 800px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
     overflow: hidden;
-    border-radius: 16px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border: solid 4px #134647;
 }
 
-.containerVideo iframe, .vantagensDoCurso iframe {
-    position: absolute;
+.slides{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 200%;
+    height: 100%;
+    border-bottom: solid 3px #134647;
+}
+
+.slides input{
+    display: none;
+}
+
+.slider{
+    width: 50%;
+    height: 100%;
+    transition: 0.3s;
+    position: relative;
+}
+
+.slider iframe{
+    width: 800px;
+    height: 100%;
+}
+
+.manual-navigation{
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    gap: 1rem;
+    margin-top: 10px;
+}
+
+#prevBtn svg, #nextBtn svg{
     width: 100%;
     height: 100%;
-    left: 0;
-    top: 0;
+}
+
+#prevBtn{
+    transform: rotate(180deg);
+}
+
+.radio-navigation{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#radio1:checked ~ .on{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .on{
+    margin-left: -50.3%;
+}
+
+.btn-navigation{
+    width: 95vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .estruturaCurricular {
@@ -286,7 +332,7 @@ main {
 }
 
 .containerCuriosidades{
-    height: 70vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -301,7 +347,6 @@ main {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin-bottom: 100px;
 }
 
 .containerCarreira li{
@@ -419,20 +464,22 @@ footer p {
 
 	.navBar ul li a:hover{
 		transform: scale(1.2);
+        color: #0c7e7e;
 		border-radius: 0.5;
 	}
 
     /* MAIN GERAL */
-    .tituloEvideo {
-        width: 800px;
-        padding-top: 100px; 
-        margin-bottom: 10px;
+
+    h2{
+        font-size: 55px;
+        padding-top: 14vh;
     }
 
-    .tituloEvideo h2 {
-        font-size: 60px;
-        margin-bottom: 50px;
+    .radio-navigation{
+        width: 50px;
+        height: 50px;
     }
+
 
     .estruturaCurricular {
         margin-bottom: 10px;
@@ -457,19 +504,17 @@ footer p {
         width: 25vw; 
         height: auto;
         margin-right: 0; 
-       transition: 0.5s;
+        transition: 0.5s;
     }
     
 	.quadros span:hover, .containerCarreira li:hover{
 		background-color: #00272d;
         border-color: solid 3px #0c7e7e;
-  		transform: scale(1.1);
         border-radius: 10px;
 	}
 
     .quadros span h4 {
         font-size: 27px;
-        transform: scale(1.1);
     }
 
     .quadros span p, .listIcones li p{
@@ -574,6 +619,7 @@ footer p {
         justify-content: center;
         align-items: center;
         gap: 30px;
+        margin-top: 2.7rem;
     }
 
     footer p {
